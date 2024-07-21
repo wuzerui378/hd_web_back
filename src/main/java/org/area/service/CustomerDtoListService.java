@@ -25,7 +25,7 @@ public class CustomerDtoListService {
     }
 
     public List<CustomerDtoList> getByRegionClusterId(int regionClusterId) {
-        return repository.findByRegionClusterSubmit_Id(regionClusterId);
+        return repository.findByRegionClusterId(regionClusterId);
     }
 
     public CustomerDtoList save(CustomerDtoList customerDtoList) {

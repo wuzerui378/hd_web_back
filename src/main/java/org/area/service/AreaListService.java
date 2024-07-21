@@ -25,7 +25,7 @@ public class AreaListService {
 
     // 修改方法名以匹配仓库中的方法
     public List<AreaList> getByRegionClusterSubmitId(int regionClusterSubmitId) {
-        return repository.findByRegionClusterSubmit_Id(regionClusterSubmitId);
+        return repository.findByRegionClusterId(regionClusterSubmitId);
     }
 
     public AreaList save(AreaList areaList) {

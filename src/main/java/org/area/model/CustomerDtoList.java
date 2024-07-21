@@ -10,12 +10,29 @@ public class CustomerDtoList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "region_cluster_id", nullable = false)
-    private RegionClusterSubmit regionClusterSubmit;
+    // 添加 regionClusterId 属性
+    @Column(name = "region_cluster_id", nullable = false)
+    private int regionClusterId;
+
 
     @Column(nullable = false)
     private int customerId;
+
+    @Column(nullable = false)
+    private LocalDateTime createTime;
+
+    @Column(nullable = false)
+    private int agentId;
+
+    @Column(nullable = false, length = 255)
+    private String agentName;
+
+    @Column(nullable = false, length = 20)
+    private String customerMobile;
+
+    @Column(nullable = false, length = 255)
+    private String customerFullname;
+
 
     public int getId() {
         return id;
@@ -25,13 +42,6 @@ public class CustomerDtoList {
         this.id = id;
     }
 
-    public RegionClusterSubmit getRegionClusterSubmit() {
-        return regionClusterSubmit;
-    }
-
-    public void setRegionClusterSubmit(RegionClusterSubmit regionClusterSubmit) {
-        this.regionClusterSubmit = regionClusterSubmit;
-    }
 
     public int getCustomerId() {
         return customerId;
@@ -81,21 +91,15 @@ public class CustomerDtoList {
         this.customerFullname = customerFullname;
     }
 
-    @Column(nullable = false)
-    private LocalDateTime createTime;
 
-    @Column(nullable = false)
-    private int agentId;
 
-    @Column(nullable = false, length = 255)
-    private String agentName;
+    public int getRegionClusterId() {
+        return regionClusterId;
+    }
 
-    @Column(nullable = false, length = 20)
-    private String customerMobile;
-
-    @Column(nullable = false, length = 255)
-    private String customerFullname;
-
+    public void setRegionClusterId(int regionClusterId) {
+        this.regionClusterId = regionClusterId;
+    }
 
 
     // Getters and setters...

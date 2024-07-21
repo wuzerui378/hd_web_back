@@ -16,9 +16,7 @@ public class RegionClusterSubmitService {
         return repository.findAll();
     }
 
-    public List<RegionClusterSubmit> getAll() {
-        return repository.findAll();
-    }
+
 
     public RegionClusterSubmit getById(int id) {
         return repository.findById(id).orElse(null);

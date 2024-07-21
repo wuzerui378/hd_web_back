@@ -1,4 +1,4 @@
-package org.area.model;
+package org.area.commom.enums;
 
 public enum Status {
     AUDITING,

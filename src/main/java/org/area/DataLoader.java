@@ -1,5 +1,7 @@
 package org.area;
 
+import org.area.commom.enums.RegionCrowdType;
+import org.area.commom.enums.Status;
 import org.area.dao.AreaListRepository;
 import org.area.dao.CustomerDtoListRepository;
 import org.area.dao.RegionClusterSubmitRepository;
@@ -38,8 +40,8 @@ public class DataLoader implements CommandLineRunner {
 
         // 创建 AreaList 实例
         AreaList area = new AreaList();
-        area.setRegionClusterSubmit(cluster);
         area.setAreaId(101);
+        area.setRegionClusterId(1);
         area.setProvinceId(10);
         area.setProvinceName("Province Name");
         area.setCityId(1001);
@@ -54,8 +56,8 @@ public class DataLoader implements CommandLineRunner {
 
         // 创建 CustomerDtoList 实例
         CustomerDtoList customer = new CustomerDtoList();
-        customer.setRegionClusterSubmit(cluster);
         customer.setCustomerId(10001);
+        customer.setRegionClusterId(1);
         customer.setCreateTime(LocalDateTime.now());
         customer.setAgentId(1);
         customer.setAgentName("Agent Name");

@@ -10,9 +10,10 @@ public class AreaList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "region_cluster_id", nullable = false)
-    private RegionClusterSubmit regionClusterSubmit;
+    // 添加 regionClusterId 属性
+    @Column(name = "region_cluster_id", nullable = false)
+    private int regionClusterId;
+
 
     @Column(nullable = false)
     private int areaId;
@@ -55,13 +56,7 @@ public class AreaList {
         this.id = id;
     }
 
-    public RegionClusterSubmit getRegionClusterSubmit() {
-        return regionClusterSubmit;
-    }
 
-    public void setRegionClusterSubmit(RegionClusterSubmit regionClusterSubmit) {
-        this.regionClusterSubmit = regionClusterSubmit;
-    }
 
     public int getAreaId() {
         return areaId;
@@ -149,6 +144,15 @@ public class AreaList {
 
     public void setUpdateTime(LocalDateTime updateTime) {
         this.updateTime = updateTime;
+    }
+
+
+    public int getRegionClusterId() {
+        return regionClusterId;
+    }
+
+    public void setRegionClusterId(int regionClusterId) {
+        this.regionClusterId = regionClusterId;
     }
 // Getters and setters...
 }

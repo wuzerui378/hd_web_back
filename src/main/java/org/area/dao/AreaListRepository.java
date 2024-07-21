@@ -5,5 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface AreaListRepository extends JpaRepository<AreaList, Integer> {
-    List<AreaList> findByRegionClusterSubmit_Id(int regionClusterSubmitId);
+    List<AreaList> findByRegionClusterId(int regionClusterId); // 修改查询方法名称
+
 }

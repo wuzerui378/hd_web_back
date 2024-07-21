@@ -1,6 +1,9 @@
 package org.area.model;
 
 import jakarta.persistence.*;
+import org.area.commom.enums.RegionCrowdType;
+import org.area.commom.enums.Status;
+
 import java.time.LocalDateTime;
 
 @Entity
