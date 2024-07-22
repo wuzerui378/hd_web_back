@@ -15,24 +15,29 @@ public class AreaListService {
         return repository.findAll();
     }
 
-    public List<AreaList> getAll() {
-        return repository.findAll();
-    }
+
 
     public AreaList getById(int id) {
         return repository.findById(id).orElse(null);
     }
 
-    // 修改方法名以匹配仓库中的方法
     public List<AreaList> getByRegionClusterSubmitId(int regionClusterSubmitId) {
         return repository.findByRegionClusterId(regionClusterSubmitId);
     }
 
-    public AreaList save(AreaList areaList) {
-        return repository.save(areaList);
+    public void saveAll(List<AreaList> areaLists) {
+        repository.saveAll(areaLists);
     }
 
-    public void delete(int id) {
-        repository.deleteById(id);
+    public void updateAll(int id, List<AreaList> areaLists) {
+        for (AreaList areaList : areaLists) {
+            areaList.setRegionClusterId(id); // 假设有这个字段
+            repository.save(areaList);
+        }
     }
+
+    public void deleteByRegionClusterSubmitId(int regionClusterSubmitId) {
+        repository.deleteByRegionClusterSubmitId(regionClusterSubmitId);
+    }
+
 }

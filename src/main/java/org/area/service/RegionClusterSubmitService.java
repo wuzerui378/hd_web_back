@@ -16,14 +16,17 @@ public class RegionClusterSubmitService {
         return repository.findAll();
     }
 
-
-
     public RegionClusterSubmit getById(int id) {
         return repository.findById(id).orElse(null);
     }
 
     public RegionClusterSubmit save(RegionClusterSubmit regionClusterSubmit) {
         return repository.save(regionClusterSubmit);
+    }
+
+    public void update(int id, RegionClusterSubmit regionClusterSubmit) {
+        regionClusterSubmit.setId(id); // 假设有这个字段
+        repository.save(regionClusterSubmit);
     }
 
     public void delete(int id) {

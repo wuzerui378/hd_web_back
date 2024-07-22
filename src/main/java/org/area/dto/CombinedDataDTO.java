@@ -20,14 +20,14 @@ public class CombinedDataDTO {
         this.customerDtoLists = customerDtoLists;
     }
 
-    // 构造函数，接受单个 RegionClusterSubmit 实例
-    public CombinedDataDTO(RegionClusterSubmit regionClusterSubmit,
-                           List<AreaList> areaLists,
-                           List<CustomerDtoList> customerDtoLists) {
-        this.regionClusterSubmits = Collections.singletonList(regionClusterSubmit); // 将单个对象包装成列表
-        this.areaLists = areaLists;
-        this.customerDtoLists = customerDtoLists;
-    }
+//    // 构造函数，接受单个 RegionClusterSubmit 实例
+//    public CombinedDataDTO(RegionClusterSubmit regionClusterSubmit,
+//                           List<AreaList> areaLists,
+//                           List<CustomerDtoList> customerDtoLists) {
+//        this.regionClusterSubmits = Collections.singletonList(regionClusterSubmit); // 将单个对象包装成列表
+//        this.areaLists = areaLists;
+//        this.customerDtoLists = customerDtoLists;
+//    }
 
     // Getter 和 Setter 方法
     public List<RegionClusterSubmit> getRegionClusterSubmits() {

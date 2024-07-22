@@ -16,9 +16,6 @@ public class CustomerDtoListService {
         return repository.findAll();
     }
 
-    public List<CustomerDtoList> getAll() {
-        return repository.findAll();
-    }
 
     public CustomerDtoList getById(int id) {
         return repository.findById(id).orElse(null);
@@ -28,11 +25,18 @@ public class CustomerDtoListService {
         return repository.findByRegionClusterId(regionClusterId);
     }
 
-    public CustomerDtoList save(CustomerDtoList customerDtoList) {
-        return repository.save(customerDtoList);
+    public void saveAll(List<CustomerDtoList> customerDtoLists) {
+        repository.saveAll(customerDtoLists);
     }
 
-    public void delete(int id) {
-        repository.deleteById(id);
+    public void updateAll(int id, List<CustomerDtoList> customerDtoLists) {
+        for (CustomerDtoList customerDtoList : customerDtoLists) {
+            customerDtoList.setRegionClusterId(id); // 假设有这个字段
+            repository.save(customerDtoList);
+        }
+    }
+
+    public void deleteByRegionClusterId(int regionClusterId) {
+        repository.deleteByRegionClusterId(regionClusterId);
     }
 }

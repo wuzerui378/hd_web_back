@@ -11,9 +11,8 @@ public class CustomerDtoList {
     private int id;
 
     // 添加 regionClusterId 属性
-    @Column(name = "region_cluster_id", nullable = false)
+    @Column(nullable = false)
     private int regionClusterId;
-
 
     @Column(nullable = false)
     private int customerId;
