@@ -1,10 +1,17 @@
 package org.area.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "customer_dto_list")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class CustomerDtoList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,72 +40,72 @@ public class CustomerDtoList {
     private String customerFullname;
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
-    public int getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
-    }
-
-    public LocalDateTime getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(LocalDateTime createTime) {
-        this.createTime = createTime;
-    }
-
-    public int getAgentId() {
-        return agentId;
-    }
-
-    public void setAgentId(int agentId) {
-        this.agentId = agentId;
-    }
-
-    public String getAgentName() {
-        return agentName;
-    }
-
-    public void setAgentName(String agentName) {
-        this.agentName = agentName;
-    }
-
-    public String getCustomerMobile() {
-        return customerMobile;
-    }
-
-    public void setCustomerMobile(String customerMobile) {
-        this.customerMobile = customerMobile;
-    }
-
-    public String getCustomerFullname() {
-        return customerFullname;
-    }
-
-    public void setCustomerFullname(String customerFullname) {
-        this.customerFullname = customerFullname;
-    }
-
-
-
-    public int getRegionClusterId() {
-        return regionClusterId;
-    }
-
-    public void setRegionClusterId(int regionClusterId) {
-        this.regionClusterId = regionClusterId;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
+//
+//
+//    public int getCustomerId() {
+//        return customerId;
+//    }
+//
+//    public void setCustomerId(int customerId) {
+//        this.customerId = customerId;
+//    }
+//
+//    public LocalDateTime getCreateTime() {
+//        return createTime;
+//    }
+//
+//    public void setCreateTime(LocalDateTime createTime) {
+//        this.createTime = createTime;
+//    }
+//
+//    public int getAgentId() {
+//        return agentId;
+//    }
+//
+//    public void setAgentId(int agentId) {
+//        this.agentId = agentId;
+//    }
+//
+//    public String getAgentName() {
+//        return agentName;
+//    }
+//
+//    public void setAgentName(String agentName) {
+//        this.agentName = agentName;
+//    }
+//
+//    public String getCustomerMobile() {
+//        return customerMobile;
+//    }
+//
+//    public void setCustomerMobile(String customerMobile) {
+//        this.customerMobile = customerMobile;
+//    }
+//
+//    public String getCustomerFullname() {
+//        return customerFullname;
+//    }
+//
+//    public void setCustomerFullname(String customerFullname) {
+//        this.customerFullname = customerFullname;
+//    }
+//
+//
+//
+//    public int getRegionClusterId() {
+//        return regionClusterId;
+//    }
+//
+//    public void setRegionClusterId(int regionClusterId) {
+//        this.regionClusterId = regionClusterId;
+//    }
 
 
     // Getters and setters...
