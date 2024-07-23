@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 public class RegionClusterSubmit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int regionClusterId;
+    private int id;
 
     @Column(nullable = false, length = 255)
     private String regionClusterName;
@@ -43,11 +43,11 @@ public class RegionClusterSubmit {
     private int cleanMark;
 
     public int getId() {
-        return regionClusterId;
+        return id;
     }
 
     public void setId(int id) {
-        this.regionClusterId = id;
+        this.id = id;
     }
 
     public String getRegionClusterName() {

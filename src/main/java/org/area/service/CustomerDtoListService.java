@@ -11,11 +11,9 @@ public class CustomerDtoListService {
     @Autowired
     private CustomerDtoListRepository repository;
 
-
     public List<CustomerDtoList> getAllCustomerDtoLists() {
         return repository.findAll();
     }
-
 
     public CustomerDtoList getById(int id) {
         return repository.findById(id).orElse(null);
@@ -25,18 +23,18 @@ public class CustomerDtoListService {
         return repository.findByRegionClusterId(regionClusterId);
     }
 
-    public void saveAll(List<CustomerDtoList> customerDtoLists) {
+    public void save(List<CustomerDtoList> customerDtoLists) {
         repository.saveAll(customerDtoLists);
     }
 
-    public void updateAll(int id, List<CustomerDtoList> customerDtoLists) {
+    public void update(int id, List<CustomerDtoList> customerDtoLists) {
         for (CustomerDtoList customerDtoList : customerDtoLists) {
-            customerDtoList.setRegionClusterId(id); // 假设有这个字段
+            customerDtoList.setId(id); // 或根据需要设置正确的 ID
             repository.save(customerDtoList);
         }
     }
 
-    public void deleteByRegionClusterId(int regionClusterId) {
-        repository.deleteByRegionClusterId(regionClusterId);
+    public void delete(int id) {
+        repository.deleteById(id);
     }
 }

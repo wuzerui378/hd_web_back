@@ -15,8 +15,6 @@ public class AreaListService {
         return repository.findAll();
     }
 
-
-
     public AreaList getById(int id) {
         return repository.findById(id).orElse(null);
     }
@@ -25,19 +23,18 @@ public class AreaListService {
         return repository.findByRegionClusterId(regionClusterSubmitId);
     }
 
-    public void saveAll(List<AreaList> areaLists) {
+    public void save(List<AreaList> areaLists) {
         repository.saveAll(areaLists);
     }
 
-    public void updateAll(int id, List<AreaList> areaLists) {
+    public void update(int id, List<AreaList> areaLists) {
         for (AreaList areaList : areaLists) {
-            areaList.setRegionClusterId(id); // 假设有这个字段
+            areaList.setId(id); // 或根据需要设置正确的 ID
             repository.save(areaList);
         }
     }
 
-    public void deleteByRegionClusterSubmitId(int regionClusterSubmitId) {
-        repository.deleteByRegionClusterSubmitId(regionClusterSubmitId);
+    public void delete(int id) {
+        repository.deleteById(id);
     }
-
 }
