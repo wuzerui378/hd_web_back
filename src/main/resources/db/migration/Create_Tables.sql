@@ -1,6 +1,6 @@
 -- 创建 region_cluster_submit 表
 CREATE TABLE region_cluster_submit (
-                                       region_cluster_id INT AUTO_INCREMENT PRIMARY KEY,
+                                       id INT AUTO_INCREMENT PRIMARY KEY,
                                        region_cluster_name VARCHAR(255) NOT NULL,
                                        region_crowd_type VARCHAR(255) NOT NULL,
                                        agent_id INT NOT NULL,
