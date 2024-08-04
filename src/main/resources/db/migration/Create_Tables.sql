@@ -28,6 +28,7 @@ CREATE TABLE customer_dto_list (
 CREATE TABLE area_list (
                            id INT AUTO_INCREMENT PRIMARY KEY,
                            region_cluster_id INT NOT NULL,
+                           region_cluster_name VARCHAR(255) NOT NULL,
                            area_id INT NOT NULL,
                            province_id INT NOT NULL,
                            province_name VARCHAR(255) NOT NULL,
@@ -38,5 +39,10 @@ CREATE TABLE area_list (
                            created_by VARCHAR(255) NOT NULL,
                            updated_by VARCHAR(255) NOT NULL,
                            create_time DATETIME NOT NULL,
-                           update_time DATETIME NOT NULL
+                           update_time DATETIME NOT NULL,
+                           agent_id INT NOT NULL,
+                           area_level INT NOT NULL,
+                           area_code VARCHAR(6) NOT NULL,
+                           area_name VARCHAR(255) NOT NULL,
+                           parent_id INT NOT NULL
 );

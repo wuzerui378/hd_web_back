@@ -16,7 +16,8 @@ public class RegionClusterSubmitController {
 
     // 请求：@RequestBody RegionClusterSubmitRequest
     // 响应：ApiResponse<String>
-    @PostMapping
+    // 创建区域
+    @PostMapping("/create")
     public ApiResponse<String> createRegionCluster(@RequestBody RegionClusterSubmitRequest request) {
         regionClusterSubmitService.save(request.toEntity());
         return ApiResponse.success("Region cluster created successfully");
@@ -24,6 +25,7 @@ public class RegionClusterSubmitController {
 
     // 请求：@PathVariable int id
     // 响应：ApiResponse<RegionClusterSubmitResponse>
+    // 获取区域详情
     @GetMapping("/{id}")
     public ApiResponse<RegionClusterSubmitResponse> getRegionCluster(@PathVariable int id) {
         var regionClusterSubmit = regionClusterSubmitService.getById(id);
@@ -32,6 +34,7 @@ public class RegionClusterSubmitController {
 
     // 请求：@PathVariable int id, @RequestBody RegionClusterSubmitRequest
     // 响应：ApiResponse<String>
+    // 更新区域
     @PutMapping("/{id}")
     public ApiResponse<String> updateRegionCluster(@PathVariable int id, @RequestBody RegionClusterSubmitRequest request) {
         regionClusterSubmitService.update(id, request.toEntity());
@@ -40,6 +43,7 @@ public class RegionClusterSubmitController {
 
     // 请求：@PathVariable int id
     // 响应：ApiResponse<String>
+    // 删除区域
     @DeleteMapping("/{id}")
     public ApiResponse<String> deleteRegionCluster(@PathVariable int id) {
         regionClusterSubmitService.delete(id);

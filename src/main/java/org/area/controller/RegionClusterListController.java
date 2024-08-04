@@ -1,6 +1,7 @@
 package org.area.controller;
 
 import org.area.dto.ApiResponse;
+import org.area.model.CustomerDtoList;
 import org.area.model.RegionClusterSubmit;
 import org.area.service.RegionClusterListService;
 import org.area.vo.request.RegionClusterListRequest;
@@ -16,6 +17,13 @@ public class RegionClusterListController {
 
     @Autowired
     private RegionClusterListService regionClusterListService;
+
+    // 新增获取所有客户的API端点
+    @GetMapping
+    public ApiResponse<List<RegionClusterSubmit>> getAllRegionCluster() {
+        List<RegionClusterSubmit> regionClusterSubmit = regionClusterListService.getAllRegionClusterSubmits();
+        return ApiResponse.success(regionClusterSubmit);
+    }
 
     // 请求：@RequestBody RegionClusterListRequest
     // 响应：ApiResponse<String>

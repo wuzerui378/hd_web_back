@@ -1,17 +1,23 @@
 package org.area.service;
 
+import jakarta.transaction.Transactional;
 import org.area.dao.CustomerDtoListRepository;
 import org.area.model.CustomerDtoList;
+import org.area.vo.request.RegionClusterCustomerPageRequest;
+import org.area.vo.response.RegionClusterCustomerPageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
+@Transactional  // 确保所有方法都在事务中执行
 public class CustomerDtoListService {
     @Autowired
     private CustomerDtoListRepository repository;
 
-    public List<CustomerDtoList> getAllCustomerDtoLists() {
+    public List<CustomerDtoList> getAllCustomers() {
         return repository.findAll();
     }
 
@@ -19,22 +25,18 @@ public class CustomerDtoListService {
         return repository.findById(id).orElse(null);
     }
 
-    public List<CustomerDtoList> getByRegionClusterId(int regionClusterId) {
-        return repository.findByRegionClusterId(regionClusterId);
+    public CustomerDtoList save(CustomerDtoList customer) {
+        return repository.save(customer);
     }
 
-    public void save(List<CustomerDtoList> customerDtoLists) {
-        repository.saveAll(customerDtoLists);
-    }
-
-    public void update(int id, List<CustomerDtoList> customerDtoLists) {
-        for (CustomerDtoList customerDtoList : customerDtoLists) {
-            customerDtoList.setId(id); // 或根据需要设置正确的 ID
-            repository.save(customerDtoList);
-        }
+    public void update(int id, CustomerDtoList customer) {
+        customer.setId(id);
+        repository.save(customer);
     }
 
     public void delete(int id) {
         repository.deleteById(id);
     }
+
+
 }
